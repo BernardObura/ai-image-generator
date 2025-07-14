@@ -1,0 +1,18 @@
+[build]
+  publish = "dist"
+  command = "npm run build"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[context.production.environment]
+  VITE_HUGGINGFACE_API_KEY = "your_production_api_key_here"
+
+[context.deploy-preview.environment]
+  VITE_HUGGINGFACE_API_KEY = "your_preview_api_key_here"
+

@@ -1,0 +1,23 @@
+{
+  "name": "ai-image-generator-react",
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ],
+  "env": {
+    "VITE_HUGGINGFACE_API_KEY": "@huggingface-api-key"
+  }
+}
+
